@@ -14,6 +14,7 @@
 		B3BFBCE02852A48700550ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3BFBCDE2852A48700550ADE /* Main.storyboard */; };
 		B3BFBCE22852A48800550ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3BFBCE12852A48800550ADE /* Assets.xcassets */; };
 		B3BFBCE52852A48800550ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3BFBCE32852A48800550ADE /* LaunchScreen.storyboard */; };
+		B3BFBCF02852AC7B00550ADE /* VStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BFBCEF2852AC7B00550ADE /* VStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B3BFBCE12852A48800550ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3BFBCE42852A48800550ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3BFBCE62852A48800550ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3BFBCEF2852AC7B00550ADE /* VStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStack.swift; sourceTree = "<group>"; };
 		B91190DFE93593A530E64476 /* Pods_RxSwiftPracticeLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPracticeLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41E660C96DE3D4CBA73DFDA /* Pods-RxSwiftPracticeLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPracticeLogin.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftPracticeLogin/Pods-RxSwiftPracticeLogin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,9 +73,11 @@
 		B3BFBCD72852A48700550ADE /* RxSwiftPracticeLogin */ = {
 			isa = PBXGroup;
 			children = (
+				B3BFBCEE2852AC5400550ADE /* Controllers */,
+				B3BFBCED2852AC4900550ADE /* Utils */,
+				B3BFBCEC2852AC3C00550ADE /* ViewModel */,
 				B3BFBCD82852A48700550ADE /* AppDelegate.swift */,
 				B3BFBCDA2852A48700550ADE /* SceneDelegate.swift */,
-				B3BFBCDC2852A48700550ADE /* ViewController.swift */,
 				B3BFBCDE2852A48700550ADE /* Main.storyboard */,
 				B3BFBCE12852A48800550ADE /* Assets.xcassets */,
 				B3BFBCE32852A48800550ADE /* LaunchScreen.storyboard */,
@@ -82,13 +86,35 @@
 			path = RxSwiftPracticeLogin;
 			sourceTree = "<group>";
 		};
+		B3BFBCEC2852AC3C00550ADE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B3BFBCED2852AC4900550ADE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B3BFBCEF2852AC7B00550ADE /* VStack.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		B3BFBCEE2852AC5400550ADE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B3BFBCDC2852A48700550ADE /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F1BA5B0382C212D4CF553F68 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				2CA0CEE25C14E926A42E08B1 /* Pods-RxSwiftPracticeLogin.debug.xcconfig */,
 				F41E660C96DE3D4CBA73DFDA /* Pods-RxSwiftPracticeLogin.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,6 +236,7 @@
 				B3BFBCDD2852A48700550ADE /* ViewController.swift in Sources */,
 				B3BFBCD92852A48700550ADE /* AppDelegate.swift in Sources */,
 				B3BFBCDB2852A48700550ADE /* SceneDelegate.swift in Sources */,
+				B3BFBCF02852AC7B00550ADE /* VStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
