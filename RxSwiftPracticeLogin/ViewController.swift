@@ -8,12 +8,117 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    lazy var titleLable : UILabel = {
+        let label = UILabel()
+        label.text = "Log in"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var emailTF : UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "Email"
+        tf.backgroundColor = .systemGray6
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        return tf
+    }()
+    
+    lazy var passwordTF : UITextField = {
+        let tf = UITextField()
+        tf.placeholder = "Password"
+        tf.backgroundColor = .systemGray6
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        return tf
+    }()
+    
+    lazy var loginBTN : UIButton = {
+        let btn = UIButton()
+        btn.setTitle("Log in", for:.normal)
+        btn.backgroundColor = .blue
+        btn.addTarget(self, action: #selector(loginHandler), for: .touchUpInside)
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.layer.cornerRadius = 5
+        btn.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        return btn
+    }()
+    
+    lazy var contentStack: VStack = {
+        let stack = VStack()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.addArrangedSubview(titleLable)
+        stack.addArrangedSubview(emailTF)
+        stack.addArrangedSubview(passwordTF)
+        stack.addArrangedSubview(loginBTN)
+        stack.spacing = 10
+        stack.alignment = .center
+        stack.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        return stack
+    }()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        view.addSubview(contentStack)
+        view.backgroundColor = .white
+        
+        NSLayoutConstraint.activate([
+        
+//            contentStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+//            contentStack.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+            contentStack.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            contentStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+            
+        ])
     }
+    
 
-
+    @objc func loginHandler(){
+        
+    }
+    
 }
 
+
+
+
+open class BaseUIStackView : UIStackView{
+    public convenience init() {
+        self.init(frame: .zero)
+    }
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    public required init(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+
+    
+    public override func awakeFromNib(){
+        super.awakeFromNib()
+        setupView()
+    }
+
+    open func setupView(){
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+}
+
+
+open class VStack: BaseUIStackView {
+    open override func setupView() {
+        super.setupView()
+        
+        axis = .vertical
+    }
+}
