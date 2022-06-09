@@ -15,6 +15,7 @@
 		B3BFBCE22852A48800550ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3BFBCE12852A48800550ADE /* Assets.xcassets */; };
 		B3BFBCE52852A48800550ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3BFBCE32852A48800550ADE /* LaunchScreen.storyboard */; };
 		B3BFBCF02852AC7B00550ADE /* VStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BFBCEF2852AC7B00550ADE /* VStack.swift */; };
+		B3BFBCF22852AD4D00550ADE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BFBCF12852AD4D00550ADE /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B3BFBCE42852A48800550ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3BFBCE62852A48800550ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3BFBCEF2852AC7B00550ADE /* VStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VStack.swift; sourceTree = "<group>"; };
+		B3BFBCF12852AD4D00550ADE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		B91190DFE93593A530E64476 /* Pods_RxSwiftPracticeLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftPracticeLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F41E660C96DE3D4CBA73DFDA /* Pods-RxSwiftPracticeLogin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftPracticeLogin.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftPracticeLogin/Pods-RxSwiftPracticeLogin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +91,7 @@
 		B3BFBCEC2852AC3C00550ADE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B3BFBCF12852AD4D00550ADE /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				B3BFBCDD2852A48700550ADE /* ViewController.swift in Sources */,
 				B3BFBCD92852A48700550ADE /* AppDelegate.swift in Sources */,
 				B3BFBCDB2852A48700550ADE /* SceneDelegate.swift in Sources */,
+				B3BFBCF22852AD4D00550ADE /* LoginViewModel.swift in Sources */,
 				B3BFBCF02852AC7B00550ADE /* VStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

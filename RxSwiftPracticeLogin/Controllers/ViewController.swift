@@ -6,8 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
+    
+    private let loginViewModel = LoginViewModel()
+    private let disposeBag = DisposeBag()
+    
     
     lazy var titleLable : UILabel = {
         let label = UILabel()
@@ -74,11 +80,20 @@ class ViewController: UIViewController {
             contentStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
             
         ])
+        
+        emailTF.becomeFirstResponder()
+        
+        emailTF.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.usernameTextPublishSubject).disposed(by: disposeBag)
+        passwordTF.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.passwordTextPublishSubject).disposed(by: disposeBag)
+        
+        loginViewModel.isValid().bind(to: loginBTN.rx.isEnabled).disposed(by: disposeBag)
+        loginViewModel.isValid().map{$0 ? 1 : 0.1}.bind(to: loginBTN.rx.alpha).disposed(by: disposeBag)
+        
     }
     
 
     @objc func loginHandler(){
-        
+        print("Tapped")
     }
     
 }
