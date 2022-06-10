@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         let label = UILabel()
         label.text = "Log in"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
         return label
     }()
     
@@ -40,6 +41,16 @@ class ViewController: UIViewController {
         return tf
     }()
     
+    lazy var passwordRuleLabel : UILabel = {
+        let label = UILabel()
+        label.text = "More than 8 letters"
+        label.textColor = .red
+        label.font = UIFont.systemFont(ofSize: 10)
+        label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     lazy var loginBTN : UIButton = {
         let btn = UIButton()
         btn.setTitle("Log in", for:.normal)
@@ -57,10 +68,10 @@ class ViewController: UIViewController {
         stack.addArrangedSubview(titleLable)
         stack.addArrangedSubview(emailTF)
         stack.addArrangedSubview(passwordTF)
+        stack.addArrangedSubview(passwordRuleLabel)
         stack.addArrangedSubview(loginBTN)
         stack.spacing = 10
-        stack.alignment = .center
-        stack.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        stack.widthAnchor.constraint(equalToConstant: 250).isActive = true
         return stack
     }()
     
@@ -87,6 +98,8 @@ class ViewController: UIViewController {
         passwordTF.rx.text.map { $0 ?? "" }.bind(to: loginViewModel.passwordTextPublishSubject).disposed(by: disposeBag)
         
         loginViewModel.isValid().bind(to: loginBTN.rx.isEnabled).disposed(by: disposeBag)
+        loginViewModel.isValid().map{$0 ? UIColor.systemMint : UIColor.systemRed}.bind(to: passwordRuleLabel.rx.textColor).disposed(by: disposeBag)
+        loginViewModel.isValid().map{$0 ? "Valid" : "More than 8 letters"}.bind(to: passwordRuleLabel.rx.text).disposed(by: disposeBag)
         loginViewModel.isValid().map{$0 ? 1 : 0.1}.bind(to: loginBTN.rx.alpha).disposed(by: disposeBag)
         
     }
